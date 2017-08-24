@@ -1,0 +1,248 @@
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: "../fonts/icomoon/icomoon.eot";
+  src:url("../fonts/icomoon/icomoon.eot?#iefix") format("embedded-opentype"), 
+      url("../fonts/icomoon/icomoon.woff") format("woff"),
+      url("../fonts/icomoon/icomoon.ttf") format("truetype"), 
+      url("../fonts/icomoon/icomoon.svg#icomoon") format("svg"); 
+}
+
+@font-face {
+  font-family: "simple line icons";
+  font-style: normal;
+  font-weight: normal;
+  src: "../fonts/simple-line-icons/Simple-Line-Icons.eot";
+  src:url("../fonts/simple-line-icons/Simple-Line-Icons.eot?#iefix") format("embedded-opentype"), 
+      url("../fonts/simple-line-icons/Simple-Line-Icons.woff") format("woff"), 
+      url("../fonts/simple-line-icons/Simple-Line-Icons.ttf") format("truetype"), 
+      url("../fonts/simple-line-icons/Simple-Line-Icons.svg#simple_line_icons") format("svg"); 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.icomoon-icon{
+  font-family: icomoon;
+}
+.edit-icon:before{
+  content: "\f044";
+}
+.arrow-right-icon:before{
+  content: "\f061";
+}
+.arrow-down-icon:before{
+  content: "\f063"
+}
+.remove-icon:before{
+  content: "\f014";
+}
+.minus-circle-icon:before {
+  content: "\f056";
+}
+
+.tree {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+/*We will use ::before and ::after to draw the connectors*/
+.tree li::before, .tree li::after {
+  content:'';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+.tree li:after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+/*Remove space from the top of single children*/
+.tree li:only-child {
+  padding-top: 0;
+}
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after {
+  border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+  margin-left: -1px;
+}
+.tree li a {
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+li a.just-line {
+  display: none;
+}
+a.just-line + ul {
+  padding-top: 74px;
+}
+a.just-line + ul:before {
+  height: 74px;
+}
+
+/*Rood card*/
+.card {
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-flex;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.card__profile input {
+  display: block;
+  border: none;
+  background-color: transparent;
+  width: 100px;
+}
+
+.card__image {
+  contain: content;
+  float: left;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.card__title__id-number {
+  position: absolute;
+   transform: translate(5px, -10px); 
+  font-size: 10px;
+  width: 30px;
+  background-color: deepskyblue;
+}
+
+.card__image img {
+  width: 30px;
+  padding: 5px;
+  background: white;
+  border-radius: 2px;
+}
+
+.card__profile {
+  text-align: left;
+  float: right;
+  margin: 5px;
+}
+
+.card__action {
+  margin: 3px;
+  display: none
+}
+
+.card__profile__title {
+  color: deepskyblue;
+  font-weight: bold;
+}
+
+.card__profile__department {
+  color: #ABABAB;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.card__profile__employeeId {
+  color: deepskyblue;
+  text-decoration: underline;
+}
+
+.card__profile__mail {
+  color: #ABABAB;
+  font-style: italic;
+}
+
+.card__action__edit {
+    display: none;
+}
+
+.card__action__arrow-right {
+     display: none;
+}
+
+.card__action__arrow-down{
+     display: none;
+}
+.card__action__remove {
+     display: none;
+}
+
+.card__collapse-button {
+  position: relative;
+  transform: translate(-93px, 62px);
+  z-index: 1000;
+}
+
+.card__action--active {
+  display: block
+}
+
+
