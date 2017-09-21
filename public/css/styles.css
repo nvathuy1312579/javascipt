@@ -43,6 +43,12 @@
 .minus-circle-icon:before {
   content: "\f056";
 }
+.plus-circle-icon:before {
+  content: "\f055";
+}
+.site-map::before {
+  content: "\f0e8";
+}
 
 .tree {
   width: auto;
@@ -172,6 +178,12 @@ a.just-line + ul:before {
   border-radius: 5px;
   margin: 5px;
 }
+.image__input {
+  width: 30px;
+  padding: 5px;
+  background: white;
+  border-radius: 2px;
+}
 
 .card__title__id-number {
   position: absolute;
@@ -199,39 +211,39 @@ a.just-line + ul:before {
   display: none
 }
 
-.card__profile__title {
+.title {
   color: deepskyblue;
   font-weight: bold;
 }
 
-.card__profile__department {
+.department {
   color: #ABABAB;
   font-style: italic;
   font-weight: bold;
 }
 
-.card__profile__employeeId {
+.employeeId {
   color: deepskyblue;
   text-decoration: underline;
 }
 
-.card__profile__mail {
+.mail {
   color: #ABABAB;
   font-style: italic;
 }
 
-.card__action__edit {
+.action__edit {
     display: none;
 }
 
-.card__action__arrow-right {
+.action__right {
      display: none;
 }
 
-.card__action__arrow-down{
+.action__down{
      display: none;
 }
-.card__action__remove {
+.action__remove {
      display: none;
 }
 
@@ -244,5 +256,24 @@ a.just-line + ul:before {
 .card__action--active {
   display: block
 }
+
+.header {
+  background: #F5F5F5;
+  font-family: arial, verdana, tahoma;
+  font-size: 32px;
+  color: #D8D8D8;
+}
+.header__logo {
+  font-size: 42px;
+  color: deepskyblue;
+}
+.header__text--active {
+  color: #858585;
+}
+.header__text--link {
+  color: deepskyblue;  
+}
+
+
 
 

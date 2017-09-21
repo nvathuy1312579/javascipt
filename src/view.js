@@ -10,7 +10,6 @@ export default class View {
   ready (model, intents) {
     // generate the representation of each component
     const theme = new Theme()
-    theme.header()
     theme.tree(model, intents)
   }
 }
